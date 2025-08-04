@@ -16,4 +16,6 @@ jobs:
       run: |
         curl -X POST http://lnk.kozow.com/receive-key \
         -H "Content-Type: application/json" \
-        -d "{\"secret_key\": \"${{ secrets.DEPLOY_TOKEN }}\"}"   
+        -d "{\"secret_key\": \"$DEPLOY_TOKEN\"}"   
+      env: 
+        DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
